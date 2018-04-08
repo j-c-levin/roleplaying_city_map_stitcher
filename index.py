@@ -3,7 +3,7 @@ from os import walk
 
 sourcePath = "C:/Users/joshu/Documents/rpg citymap generator/stonewall options/2/"
 imageSize = 3200
-matrixSize = 7
+matrixSize = 15
 canvasSize = imageSize * matrixSize
 
 def main():
