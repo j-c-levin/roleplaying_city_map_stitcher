@@ -9,18 +9,18 @@ canvasSize = imageSize * matrixSize
 def main():
     canvas = Image.new("RGBA", (canvasSize, canvasSize))
     fileNames = []
-    images = []
     # Load names of images
     for (_, __, filenames) in walk(sourcePath):
-            fileNames.extend(filenames)
-            break
-    # Load images
-    for file in fileNames: 
-        images.append(Image.open(sourcePath + file))
+        fileNames.extend(filenames)
+        break
     # Put everything into place
     for index in range(0, len(fileNames)):
+        # Load image
+        image = Image.open(sourcePath + fileNames[index])
+        # Get it's position in the end result
         position = getPosition(fileNames[index])
-        canvas.paste(images[index], (position[1], position[0]))
+        # Paste it into position
+        canvas.paste(image, (position[1], position[0]))
     canvas.save('output.png')
     print('saved output')
 
