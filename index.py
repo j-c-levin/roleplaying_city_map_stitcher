@@ -25,13 +25,15 @@ def main():
     print('saved output')
 
 def getPosition(name):
-    # name is in the format of something_01_02
+    # name is in the format of something_01_02.bmp
+    # separate to something_01_02
+    splitName = name.split(".")[0]
     # separate to [something, 01, 02]
-    yposition = name.split("_")[1]
+    yposition = splitName.split("_")[1]
     # separate 01 to just 1
     if yposition[0] == '0':
         yposition = yposition[1]
-    xposition = name.split("_")[2]
+    xposition = splitName.split("_")[2]
     # separate 02 to just 2
     if xposition[0] == '0':
         xposition = xposition[1]
