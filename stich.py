@@ -1,9 +1,10 @@
 from PIL import Image
 from os import walk
 
-sourcePath = "C:/Users/joshu/Documents/rpg citymap generator/stonewall options/2/"
+sourcePath = "C:/Users/joshu/Pictures/rpg/raw/"
+destinationPath = "C:/Users/joshu/Pictures/rpg/stitched/"
 imageSize = 3200
-matrixSize = 15
+matrixSize = 4
 canvasSize = imageSize * matrixSize
 
 def main():
@@ -21,7 +22,7 @@ def main():
         position = getPosition(fileNames[index])
         # Paste it into position
         canvas.paste(image, (position[1], position[0]))
-    canvas.save('output.png')
+    canvas.save(destinationPath + 'output-restitched.png')
     print('saved output')
 
 def getPosition(name):
